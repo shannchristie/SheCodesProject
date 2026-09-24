@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>About Shannen Nicholls</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --background: #fff7fb;
+        --text: #1d1d1f;
+        --pink: #ff6fae;
+        --pink-dark: #e95798;
+        --purple: #b56cff;
+        --white: #ffffff;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: var(--background);
+        color: var(--text);
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+      }
+
+      .custom-navbar {
+        width: 100%;
+        margin: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #f3c1dc;
+        box-shadow: 0 4px 20px rgba(181, 108, 255, 0.08);
+        padding: 15px 0;
+      }
+
+      .custom-navbar .navbar-brand {
+        color: var(--purple);
+        font-weight: bold;
+        font-size: 22px;
+      }
+
+      .custom-navbar .navbar-brand:hover {
+        color: var(--pink);
+      }
+
+      .custom-navbar .nav-link {
+        color: var(--text);
+        font-size: 16px;
+        margin-left: 15px;
+        transition: all 0.2s ease;
+      }
+
+      .custom-navbar .nav-link:hover {
+        color: var(--pink);
+        transform: translateY(-2px);
+      }
+
+      .custom-navbar .navbar-toggler {
+        border-color: #f3c1dc;
+      }
+
+      .about-intro {
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 20px;
+      }
+
+      .about-intro h1 {
+        font-weight: bold;
+        font-size: 60px;
+        color: var(--purple);
+        margin-bottom: 15px;
+      }
+
+      .about-intro h3 {
+        font-size: 25px;
+        margin: 0;
+      }
+
+      .about-paragraphs {
+        max-width: 900px;
+        margin: 50px auto;
+      }
+
+      .about-paragraphs p {
+        background: var(--white);
+        padding: 35px;
+        border-radius: 20px;
+
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04),
+          0 12px 30px rgba(181, 108, 255, 0.12);
+
+        text-align: center;
+        line-height: 1.7;
+        font-size: 16px;
+
+        transition: all 0.35s ease;
+      }
+
+      .about-paragraphs p:hover {
+        transform: translateY(-5px);
+
+        box-shadow: 0 8px 15px rgba(255, 111, 174, 0.12),
+          0 20px 45px rgba(181, 108, 255, 0.2);
+      }
+
+      .photo-guide {
+        display: grid;
+        grid-template-columns: repeat(3, 250px);
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+      }
+
+      .photo {
+        text-align: center;
+      }
+
+      .photo img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+
+        border-radius: 20px;
+        border: 2px solid #f8e1ee;
+
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04),
+          0 12px 30px rgba(181, 108, 255, 0.12);
+
+        transition: all 0.35s ease;
+      }
+
+      .photo img:hover {
+        transform: translateY(-5px);
+
+        box-shadow: 0 8px 15px rgba(255, 111, 174, 0.12),
+          0 20px 45px rgba(181, 108, 255, 0.2);
+      }
+
+      #contact {
+        text-align: center;
+        margin-top: 70px;
+        padding-bottom: 70px;
+      }
+
+      #contact h2 {
+        color: var(--purple);
+        font-weight: bold;
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+
+      .email-link {
+        display: inline-block;
+
+        background: var(--pink);
+        box-shadow: 0 8px 20px rgba(255, 111, 174, 0.25);
+
+        color: var(--white);
+        padding: 14px 25px;
+        border-radius: 25px;
+
+        text-decoration: none;
+
+        transition: all 0.2s ease;
+      }
+
+      .email-link:hover {
+        background: var(--pink-dark);
+        color: white;
+        transform: scale(1.03);
+
+        box-shadow: 0 10px 25px rgba(255, 111, 174, 0.35);
+      }
+
+      @media (max-width: 768px) {
+        .custom-navbar {
+          padding: 12px 0;
+        }
+
+        .custom-navbar .nav-link {
+          margin-left: 0;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+
+        .about-intro {
+          padding-top: 35px;
+        }
+
+        .about-intro h1 {
+          font-size: 45px;
+        }
+
+        .about-intro h3 {
+          font-size: 20px;
+        }
+
+        .about-paragraphs {
+          margin: 40px 20px;
+        }
+
+        .about-paragraphs p {
+          padding: 25px;
+        }
+
+        .photo-guide {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+
+        .photo img {
+          width: 250px;
+          height: 250px;
+        }
+
+        #contact {
+          margin-top: 50px;
+          padding-bottom: 50px;
+        }
+
+        #contact h2 {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="home.html"> Shannen Nicholls </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html"> Homepage </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="about.html"> About Me </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="about-intro">
+      <div class="container">
+        <h1>About me</h1>
+
+        <h3>Front-end developer from Bournemouth, UK</h3>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="about-paragraphs">
+        <p>
+          Hi, I’m Shannen! I’m an aspiring web developer with a passion for
+          creating websites and learning new coding skills. I enjoy turning
+          ideas into simple, responsive, and user-friendly designs. I’m
+          currently developing my skills through She Codes and working on
+          exciting new projects.
+        </p>
+      </div>
+
+      <div class="photo-guide">
+        <div class="photo">
+          <img src="images/project1.png" alt="Let's Manifest App" />
+        </div>
+
+        <div class="photo">
+          <img src="images/project2.png" alt="My Dopamine Hobby" />
+        </div>
+
+        <div class="photo">
+          <img src="images/project3.png" alt="Weather App" />
+        </div>
+      </div>
+
+      <div id="contact">
+        <h2>💌 Contact me</h2>
+
+        <a href="mailto:shannen@email.com" class="email-link">
+          shannen@email.com
+        </a>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
