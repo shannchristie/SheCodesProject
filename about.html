@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>About Shannen Nicholls</title>
+   <meta
+  name="description"
+  content="Learn more about Shannen Nicholls, an Australian front-end developer based in Bournemouth, UK, creating responsive and user-friendly websites."
+/>
+   <title>About Shannen Nicholls | Front-end Developer</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -130,19 +131,20 @@
       }
 
       .photo img {
-        width: 250px;
-        height: 250px;
-        object-fit: cover;
+  width: 100%;
+  max-width: 250px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 
-        border-radius: 20px;
-        border: 2px solid #f8e1ee;
+  border-radius: 20px;
+  border: 2px solid #f8e1ee;
 
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04),
-          0 12px 30px rgba(181, 108, 255, 0.12);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.04),
+    0 12px 30px rgba(181, 108, 255, 0.12);
 
-        transition: all 0.35s ease;
-      }
-
+  transition: all 0.35s ease;
+}
       .photo img:hover {
         transform: translateY(-5px);
 
@@ -235,6 +237,16 @@
         #contact h2 {
           font-size: 30px;
         }
+        (hover: hover) {
+  .photo img:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+      0 8px 15px rgba(255, 111, 174, 0.12),
+      0 20px 45px rgba(181, 108, 255, 0.2);
+  }
+}
+      
       }
     </style>
   </head>
@@ -273,7 +285,7 @@
         </div>
       </div>
     </nav>
-
+<main>
     <section class="about-intro">
       <div class="container">
         <h1>About me</h1>
@@ -283,37 +295,53 @@
     </section>
 
     <div class="container">
-      <div class="about-paragraphs">
-        <p>
-          Hi, I’m Shannen! I’m an aspiring web developer with a passion for
-          creating websites and learning new coding skills. I enjoy turning
-          ideas into simple, responsive, and user-friendly designs. I’m
-          currently developing my skills through She Codes and working on
-          exciting new projects.
-        </p>
-      </div>
+      <section class="about-content">
+  <div class="about-paragraphs">
+    <p>
+      Hi, I’m Shannen! I’m an aspiring web developer with a passion for
+      creating websites and learning new coding skills. I enjoy turning
+      ideas into simple, responsive, and user-friendly designs. I’m
+      currently developing my skills through She Codes and working on
+      exciting new projects.
+    </p>
+  </div>
+</section>
 
       <div class="photo-guide">
         <div class="photo">
-          <img src="images/project1.png" alt="Let's Manifest App" />
+         <img
+  src="images/project1.png"
+  alt="Screenshot of Shannen Nicholls' Let's Manifest web application"
+/>
         </div>
 
         <div class="photo">
-          <img src="images/project2.png" alt="My Dopamine Hobby" />
+          <img
+  src="images/project2.png"
+  alt="Screenshot of Shannen Nicholls' My Dopamine Hobby website"
+/>
         </div>
 
         <div class="photo">
-          <img src="images/project3.png" alt="Weather App" />
+          <img
+  src="images/project3.png"
+  alt="Screenshot of Shannen Nicholls' weather application"
+/>
         </div>
       </div>
+      </main>
 
-      <div id="contact">
-        <h2>💌 Contact me</h2>
+      <section id="contact">
+  <h2>💌 Contact me</h2>
 
-        <a href="mailto:shannen@email.com" class="email-link">
-          shannen@email.com
-        </a>
-      </div>
+  <p>
+    I'd love to hear from you. You can contact me by email:
+  </p>
+
+  <a href="mailto:shannen@email.com" class="email-link">
+    shannen@email.com
+  </a>
+</section>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
