@@ -2,11 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-   <meta
-  name="description"
-  content="Learn more about Shannen Nicholls, an Australian front-end developer based in Bournemouth, UK, creating responsive and user-friendly websites."
-/>
-   <title>About Shannen Nicholls | Front-end Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>About Shannen Nicholls | Front-end Developer</title>
+
+    <meta
+      name="description"
+      content="Learn more about Shannen Nicholls, an aspiring front-end developer from Bournemouth, UK."
+    />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -80,13 +83,13 @@
 
       .about-intro h1 {
         font-weight: bold;
-        font-size: 60px;
+        font-size: clamp(2.8rem, 8vw, 3.75rem);
         color: var(--purple);
         margin-bottom: 15px;
       }
 
-      .about-intro h3 {
-        font-size: 25px;
+      .about-intro .subtitle {
+        font-size: clamp(1.1rem, 3vw, 1.5625rem);
         margin: 0;
       }
 
@@ -119,7 +122,7 @@
 
       .photo-guide {
         display: grid;
-        grid-template-columns: repeat(3, 250px);
+        grid-template-columns: repeat(auto-fit, minmax(220px, 250px));
         gap: 30px;
         justify-content: center;
         align-items: center;
@@ -131,37 +134,30 @@
       }
 
       .photo img {
-  width: 100%;
-  max-width: 250px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+        width: 100%;
+        max-width: 250px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
 
-  border-radius: 20px;
-  border: 2px solid #f8e1ee;
+        border-radius: 20px;
+        border: 2px solid #f8e1ee;
 
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.04),
-    0 12px 30px rgba(181, 108, 255, 0.12);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04),
+          0 12px 30px rgba(181, 108, 255, 0.12);
 
-  transition: all 0.35s ease;
-}
-      .photo img:hover {
-        transform: translateY(-5px);
-
-        box-shadow: 0 8px 15px rgba(255, 111, 174, 0.12),
-          0 20px 45px rgba(181, 108, 255, 0.2);
+        transition: all 0.35s ease;
       }
 
       #contact {
         text-align: center;
         margin-top: 70px;
-        padding-bottom: 70px;
+        padding: 0 20px 70px;
       }
 
       #contact h2 {
         color: var(--purple);
         font-weight: bold;
-        font-size: 35px;
+        font-size: clamp(1.8rem, 5vw, 2.2rem);
         margin-bottom: 20px;
       }
 
@@ -178,6 +174,8 @@
         text-decoration: none;
 
         transition: all 0.2s ease;
+
+        overflow-wrap: anywhere;
       }
 
       .email-link:hover {
@@ -186,6 +184,15 @@
         transform: scale(1.03);
 
         box-shadow: 0 10px 25px rgba(255, 111, 174, 0.35);
+      }
+
+      @media (hover: hover) {
+        .photo img:hover {
+          transform: translateY(-5px);
+
+          box-shadow: 0 8px 15px rgba(255, 111, 174, 0.12),
+            0 20px 45px rgba(181, 108, 255, 0.2);
+        }
       }
 
       @media (max-width: 768px) {
@@ -203,14 +210,6 @@
           padding-top: 35px;
         }
 
-        .about-intro h1 {
-          font-size: 45px;
-        }
-
-        .about-intro h3 {
-          font-size: 20px;
-        }
-
         .about-paragraphs {
           margin: 40px 20px;
         }
@@ -224,37 +223,23 @@
           gap: 25px;
         }
 
-        .photo img {
-          width: 250px;
-          height: 250px;
-        }
-
         #contact {
           margin-top: 50px;
           padding-bottom: 50px;
         }
-
-        #contact h2 {
-          font-size: 30px;
-        }
-        (hover: hover) {
-  .photo img:hover {
-    transform: translateY(-5px);
-
-    box-shadow:
-      0 8px 15px rgba(255, 111, 174, 0.12),
-      0 20px 45px rgba(181, 108, 255, 0.2);
-  }
-}
-      
       }
     </style>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg custom-navbar">
+    <nav
+      class="navbar navbar-expand-lg custom-navbar"
+      aria-label="Main navigation"
+    >
       <div class="container">
-        <a class="navbar-brand" href="home.html"> Shannen Nicholls </a>
+       <a class="navbar-brand" href="index.html">
+  Shannen Nicholls
+</a>
 
         <button
           class="navbar-toggler"
@@ -271,81 +256,89 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html"> Homepage </a>
+              <a class="nav-link" href="index.html">
+                Homepage
+              </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="about.html"> About Me </a>
+              <a class="nav-link" href="about.html">
+                About Me
+              </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#contact"> Contact </a>
+              <a class="nav-link" href="#contact">
+                Contact
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-<main>
-    <section class="about-intro">
-      <div class="container">
-        <h1>About me</h1>
 
-        <h3>Front-end developer from Bournemouth, UK</h3>
-      </div>
-    </section>
+    <main>
+      <section class="about-intro">
+        <div class="container">
+          <h1>About me</h1>
 
-    <div class="container">
+          <p class="subtitle">
+            Front-end developer from Bournemouth, UK
+          </p>
+        </div>
+      </section>
+
       <section class="about-content">
-  <div class="about-paragraphs">
-    <p>
-      Hi, I’m Shannen! I’m an aspiring web developer with a passion for
-      creating websites and learning new coding skills. I enjoy turning
-      ideas into simple, responsive, and user-friendly designs. I’m
-      currently developing my skills through She Codes and working on
-      exciting new projects.
-    </p>
-  </div>
-</section>
+        <div class="container">
+          <div class="about-paragraphs">
+            <p>
+              Hi, I’m Shannen! I’m an aspiring web developer with a passion for
+              creating websites and learning new coding skills. I enjoy turning
+              ideas into simple, responsive, and user-friendly designs. I’m
+              currently developing my skills through She Codes and working on
+              exciting new projects.
+            </p>
+          </div>
 
-      <div class="photo-guide">
-        <div class="photo">
-         <img
-  src="images/project1.png"
-  alt="Screenshot of Shannen Nicholls' Let's Manifest web application"
-/>
-        </div>
+          <div class="photo-guide">
+            <figure class="photo">
+              <img
+                src="images/project1.png"
+                alt="Screenshot of Shannen Nicholls' Let's Manifest web application"
+              />
+            </figure>
 
-        <div class="photo">
-          <img
-  src="images/project2.png"
-  alt="Screenshot of Shannen Nicholls' My Dopamine Hobby website"
-/>
-        </div>
+            <figure class="photo">
+              <img
+                src="images/project2.png"
+                alt="Screenshot of Shannen Nicholls' My Dopamine Hobby website"
+              />
+            </figure>
 
-        <div class="photo">
-          <img
-  src="images/project3.png"
-  alt="Screenshot of Shannen Nicholls' weather application"
-/>
+            <figure class="photo">
+              <img
+                src="images/project3.png"
+                alt="Screenshot of Shannen Nicholls' weather application"
+              />
+            </figure>
+          </div>
         </div>
-      </div>
-      </main>
+      </section>
 
       <section id="contact">
-  <h2>💌 Contact me</h2>
+        <h2>💌 Contact me</h2>
 
-  <p>
-    I'd love to hear from you. You can contact me by email:
-  </p>
+        <p>I'd love to hear from you. You can contact me by email.</p>
 
-  <a href="mailto:shannen@email.com" class="email-link">
-    shannen@email.com
-  </a>
-</section>
-    </div>
+        <a href="mailto:shannen@email.com" class="email-link">
+          shannen@email.com
+        </a>
+      </section>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="script.js"></script>
   </body>
 </html>
+
