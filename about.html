@@ -1,342 +1,1423 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>About Shannen Nicholls | Front-end Developer</title>
+<head>
 
-    <meta
-      name="description"
-      content="Learn more about Shannen Nicholls, an aspiring front-end developer from Bournemouth, UK."
-    />
+  <meta charset="UTF-8" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-    <style>
-      :root {
-        --background: #fff7fb;
-        --text: #1d1d1f;
-        --pink: #ff6fae;
-        --pink-dark: #e95798;
-        --purple: #b56cff;
-        --white: #ffffff;
+  <meta
+    name="description"
+    content="Learn more about Shannen Nicholls, a UK-based front-end developer combining creativity, technology and thoughtful user experiences."
+  />
+
+  <meta
+    property="og:title"
+    content="About Shannen Nicholls | Front-end Developer"
+  />
+
+  <meta
+    property="og:description"
+    content="Discover Shannen's journey into front-end development, creative interests and approach to building digital experiences."
+  />
+
+  <title>About Shannen Nicholls | Front-end Developer</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+
+    :root {
+      --background: #fff7fb;
+      --text: #1d1d1f;
+      --pink: #ff6fae;
+      --pink-dark: #e95798;
+      --purple: #b56cff;
+      --white: #ffffff;
+      --soft-pink: #fbd7ea;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+
+
+    .custom-navbar {
+      width: 100%;
+      margin: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #f3c1dc;
+      box-shadow: 0 4px 20px rgba(181, 108, 255, 0.08);
+      padding: 15px 0;
+      position: relative;
+      z-index: 100;
+    }
+
+
+    .custom-navbar .navbar-brand {
+      color: var(--purple);
+      font-weight: bold;
+      font-size: 22px;
+      transition: all 0.2s ease;
+    }
+
+
+    .custom-navbar .navbar-brand:hover {
+      color: var(--pink);
+      transform: translateY(-1px);
+    }
+
+
+    .custom-navbar .nav-link {
+      color: var(--text);
+      font-size: 16px;
+      margin-left: 15px;
+      transition: all 0.2s ease;
+    }
+
+
+    .custom-navbar .nav-link:hover {
+      color: var(--pink);
+      transform: translateY(-2px);
+    }
+
+
+    .custom-navbar .navbar-toggler {
+      border-color: #f3c1dc;
+    }
+
+
+  
+
+    .about-hero {
+      min-height: calc(100vh - 76px);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+      overflow: hidden;
+
+      padding: 80px 20px;
+    }
+
+
+    .about-hero-content {
+      position: relative;
+      z-index: 2;
+
+      text-align: center;
+
+      max-width: 950px;
+      width: 100%;
+    }
+
+
+    .about-small {
+      font-size: clamp(1.2rem, 3vw, 1.7rem);
+
+      margin-bottom: 10px;
+
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+
+    .about-title-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+
+    .about-title {
+      position: relative;
+      z-index: 2;
+
+      margin: 0;
+
+      color: var(--purple);
+
+      font-weight: bold;
+
+      font-size: clamp(3.5rem, 10vw, 7rem);
+
+      line-height: 0.95;
+
+      letter-spacing: -3px;
+
+      animation: fadeUp 1s ease forwards;
+    }
+
+
+    .about-title span {
+      color: var(--pink);
+    }
+
+
+    .title-outline {
+      position: absolute;
+
+      width: 120%;
+      height: 65%;
+
+      left: -10%;
+      top: 20%;
+
+      border: 2px solid #f3c1dc;
+      border-radius: 50%;
+
+      transform: rotate(-5deg);
+
+      z-index: 1;
+    }
+
+
+    .sparkle {
+      position: absolute;
+
+      color: var(--pink);
+
+      font-size: 28px;
+
+      z-index: 3;
+
+      animation: float 3s ease-in-out infinite;
+    }
+
+
+    .sparkle-one {
+      top: -30px;
+      left: -55px;
+    }
+
+
+    .sparkle-two {
+      bottom: -25px;
+      right: -60px;
+
+      color: var(--purple);
+
+      animation-delay: 1s;
+    }
+
+
+    .about-tagline {
+      max-width: 700px;
+
+      margin: 35px auto 0;
+
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+
+      line-height: 1.6;
+
+      color: var(--text);
+
+      animation: fadeUp 1.2s ease forwards;
+    }
+
+
+    .about-description {
+      max-width: 650px;
+
+      margin: 15px auto 0;
+
+      color: #555;
+
+      line-height: 1.7;
+
+      font-size: 16px;
+
+      animation: fadeUp 1.4s ease forwards;
+    }
+
+
+    .floating-shape {
+      position: absolute;
+
+      border-radius: 50%;
+
+      pointer-events: none;
+
+      opacity: 0.45;
+
+      animation: float 5s ease-in-out infinite;
+    }
+
+
+    .shape-one {
+      width: 180px;
+      height: 180px;
+
+      background: #fbd7ea;
+
+      top: 15%;
+      left: -70px;
+    }
+
+
+    .shape-two {
+      width: 130px;
+      height: 130px;
+
+      background: #e7d5ff;
+
+      bottom: 15%;
+      right: -40px;
+
+      animation-delay: 1.5s;
+    }
+
+
+    .shape-three {
+      width: 60px;
+      height: 60px;
+
+      border: 2px solid var(--pink);
+
+      top: 25%;
+      right: 12%;
+
+      animation-delay: 2s;
+    }
+
+
+    .about-intro-section {
+      background: var(--white);
+
+      padding: 90px 20px;
+    }
+
+
+    .section-title {
+      text-align: center;
+
+      color: var(--purple);
+
+      font-size: clamp(2rem, 6vw, 3rem);
+
+      font-weight: bold;
+
+      margin-bottom: 15px;
+    }
+
+
+    .section-subtitle {
+      text-align: center;
+
+      max-width: 650px;
+
+      margin: 0 auto 45px;
+
+      color: #555;
+
+      line-height: 1.7;
+    }
+
+
+
+
+    .about-card {
+      max-width: 900px;
+
+      margin: 0 auto;
+
+      padding: 45px;
+
+      background: var(--background);
+
+      border: 2px solid var(--soft-pink);
+
+      border-radius: 25px;
+
+      box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.04),
+        0 12px 30px rgba(181, 108, 255, 0.12);
+
+      transition: all 0.35s ease;
+    }
+
+
+    .about-card:hover {
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 8px 15px rgba(255, 111, 174, 0.12),
+        0 20px 45px rgba(181, 108, 255, 0.2);
+    }
+
+
+    .about-card p {
+      color: #444;
+
+      line-height: 1.8;
+
+      font-size: 16px;
+
+      margin-bottom: 20px;
+    }
+
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    .highlight {
+      color: var(--pink-dark);
+
+      font-weight: bold;
+    }
+
+
+
+    .journey-section {
+      background: var(--background);
+
+      padding: 90px 20px;
+    }
+
+
+    .journey-grid {
+      max-width: 1000px;
+
+      margin: 50px auto 0;
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 25px;
+    }
+
+
+    .journey-card {
+      background: white;
+
+      border: 2px solid var(--soft-pink);
+
+      border-radius: 22px;
+
+      padding: 30px 25px;
+
+      text-align: center;
+
+      box-shadow:
+        0 8px 25px rgba(181, 108, 255, 0.08);
+
+      transition: all 0.35s ease;
+    }
+
+
+    .journey-card:hover {
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 12px 25px rgba(255, 111, 174, 0.12),
+        0 20px 40px rgba(181, 108, 255, 0.16);
+    }
+
+
+    .journey-icon {
+      width: 65px;
+      height: 65px;
+
+      margin: 0 auto 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #fff0f7;
+
+      border: 1px solid var(--soft-pink);
+
+      border-radius: 50%;
+
+      font-size: 28px;
+    }
+
+
+    .journey-card h3 {
+      color: var(--purple);
+
+      font-size: 21px;
+
+      font-weight: bold;
+
+      margin-bottom: 12px;
+    }
+
+
+    .journey-card p {
+      color: #555;
+
+      line-height: 1.7;
+
+      font-size: 15px;
+
+      margin: 0;
+    }
+
+
+    .skills-section {
+      background: white;
+
+      padding: 90px 20px;
+    }
+
+
+    .skills-container {
+      max-width: 900px;
+
+      margin: 45px auto 0;
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 14px;
+
+      flex-wrap: wrap;
+    }
+
+
+    .skill-pill {
+      background: var(--background);
+
+      border: 1px solid var(--soft-pink);
+
+      color: var(--purple);
+
+      padding: 12px 22px;
+
+      border-radius: 30px;
+
+      font-size: 15px;
+
+      font-weight: bold;
+
+      box-shadow: 0 5px 15px rgba(181, 108, 255, 0.06);
+
+      transition: all 0.25s ease;
+    }
+
+
+    .skill-pill:hover {
+      background: var(--pink);
+
+      color: white;
+
+      border-color: var(--pink);
+
+      transform: translateY(-4px);
+
+      box-shadow: 0 8px 20px rgba(255, 111, 174, 0.2);
+    }
+
+
+
+    .projects-section {
+      background: var(--background);
+
+      padding: 90px 20px;
+    }
+
+
+    .project-gallery {
+      max-width: 1000px;
+
+      margin: 50px auto 0;
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 25px;
+    }
+
+
+    .project-card {
+      background: white;
+
+      border: 2px solid var(--soft-pink);
+
+      border-radius: 20px;
+
+      padding: 15px;
+
+      box-shadow:
+        0 8px 25px rgba(181, 108, 255, 0.08);
+
+      transition: all 0.35s ease;
+
+      overflow: hidden;
+    }
+
+
+    .project-card:hover {
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 12px 25px rgba(255, 111, 174, 0.12),
+        0 20px 40px rgba(181, 108, 255, 0.18);
+    }
+
+
+    .project-card img {
+      width: 100%;
+
+      aspect-ratio: 1 / 1;
+
+      object-fit: cover;
+
+      border-radius: 14px;
+
+      display: block;
+    }
+
+
+    .project-card-content {
+      padding: 20px 10px 10px;
+
+      text-align: center;
+    }
+
+
+    .project-card h3 {
+      color: var(--purple);
+
+      font-size: 20px;
+
+      font-weight: bold;
+
+      margin-bottom: 8px;
+    }
+
+
+    .project-card p {
+      color: #555;
+
+      font-size: 14px;
+
+      line-height: 1.6;
+
+      margin: 0;
+    }
+
+
+    .about-cta {
+      background: white;
+
+      padding: 90px 20px;
+
+      text-align: center;
+    }
+
+
+    .cta-card {
+      max-width: 850px;
+
+      margin: 0 auto;
+
+      padding: 55px 35px;
+
+      background: var(--background);
+
+      border: 2px solid var(--soft-pink);
+
+      border-radius: 25px;
+
+      box-shadow:
+        0 10px 30px rgba(181, 108, 255, 0.08);
+    }
+
+
+    .cta-card h2 {
+      color: var(--purple);
+
+      font-size: clamp(2rem, 6vw, 3rem);
+
+      font-weight: bold;
+
+      margin-bottom: 15px;
+    }
+
+
+    .cta-card p {
+      max-width: 600px;
+
+      margin: 0 auto 30px;
+
+      color: #555;
+
+      line-height: 1.7;
+    }
+
+
+    .cta-button {
+      display: inline-block;
+
+      background: var(--pink);
+
+      color: white;
+
+      padding: 14px 25px;
+
+      border-radius: 25px;
+
+      text-decoration: none;
+
+      box-shadow: 0 8px 20px rgba(255, 111, 174, 0.25);
+
+      transition: all 0.25s ease;
+    }
+
+
+    .cta-button:hover {
+      background: var(--pink-dark);
+
+      color: white;
+
+      transform: translateY(-4px);
+
+      box-shadow: 0 12px 28px rgba(255, 111, 174, 0.35);
+    }
+
+
+
+    footer {
+      background: white;
+
+      border-top: 1px solid #f3c1dc;
+
+      text-align: center;
+
+      padding: 35px 20px;
+    }
+
+
+    footer p {
+      margin: 0;
+
+      color: #666;
+
+      font-size: 14px;
+    }
+
+
+    footer strong {
+      color: var(--purple);
+    }
+
+
+    @keyframes fadeUp {
+
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
 
-      html,
-      body {
-        margin: 0;
-        padding: 0;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
 
-      body {
-        background-color: var(--background);
-        color: var(--text);
-        font-family: Arial, sans-serif;
-        overflow-x: hidden;
+    }
+
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
       }
+
+      50% {
+        transform: translateY(-12px);
+      }
+
+    }
+
+
+
+    @media (max-width: 768px) {
 
       .custom-navbar {
-        width: 100%;
-        margin: 0;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid #f3c1dc;
-        box-shadow: 0 4px 20px rgba(181, 108, 255, 0.08);
-        padding: 15px 0;
+        padding: 12px 0;
       }
 
-      .custom-navbar .navbar-brand {
-        color: var(--purple);
-        font-weight: bold;
-        font-size: 22px;
-      }
-
-      .custom-navbar .navbar-brand:hover {
-        color: var(--pink);
-      }
 
       .custom-navbar .nav-link {
-        color: var(--text);
-        font-size: 16px;
-        margin-left: 15px;
-        transition: all 0.2s ease;
+        margin-left: 0;
+
+        padding-top: 10px;
+        padding-bottom: 10px;
       }
 
-      .custom-navbar .nav-link:hover {
-        color: var(--pink);
-        transform: translateY(-2px);
+
+      .about-hero {
+        min-height: auto;
+
+        padding: 90px 20px 80px;
       }
 
-      .custom-navbar .navbar-toggler {
-        border-color: #f3c1dc;
+
+      .about-title {
+        font-size: 58px;
+
+        letter-spacing: -2px;
       }
 
-      .about-intro {
-        text-align: center;
-        padding-top: 50px;
-        padding-bottom: 20px;
+
+      .sparkle-one {
+        left: -25px;
       }
 
-      .about-intro h1 {
-        font-weight: bold;
-        font-size: clamp(2.8rem, 8vw, 3.75rem);
-        color: var(--purple);
-        margin-bottom: 15px;
+
+      .sparkle-two {
+        right: -25px;
       }
 
-      .about-intro .subtitle {
-        font-size: clamp(1.1rem, 3vw, 1.5625rem);
-        margin: 0;
+
+      .about-description {
+        font-size: 15px;
       }
 
-      .about-paragraphs {
-        max-width: 900px;
-        margin: 50px auto;
+
+      .about-intro-section,
+      .journey-section,
+      .skills-section,
+      .projects-section,
+      .about-cta {
+        padding: 65px 20px;
       }
 
-      .about-paragraphs p {
-        background: var(--white);
-        padding: 35px;
-        border-radius: 20px;
 
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04),
-          0 12px 30px rgba(181, 108, 255, 0.12);
-
-        text-align: center;
-        line-height: 1.7;
-        font-size: 16px;
-
-        transition: all 0.35s ease;
+      .about-card {
+        padding: 30px 25px;
       }
 
-      .about-paragraphs p:hover {
-        transform: translateY(-5px);
 
-        box-shadow: 0 8px 15px rgba(255, 111, 174, 0.12),
-          0 20px 45px rgba(181, 108, 255, 0.2);
+      .journey-grid {
+        grid-template-columns: 1fr;
+
+        margin-top: 35px;
       }
 
-      .photo-guide {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 250px));
-        gap: 30px;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
+
+      .project-gallery {
+        grid-template-columns: 1fr;
+
+        margin-top: 35px;
       }
 
-      .photo {
-        text-align: center;
-      }
 
-      .photo img {
+      .project-card {
+        max-width: 350px;
+
         width: 100%;
-        max-width: 250px;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
 
-        border-radius: 20px;
-        border: 2px solid #f8e1ee;
-
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04),
-          0 12px 30px rgba(181, 108, 255, 0.12);
-
-        transition: all 0.35s ease;
+        margin: 0 auto;
       }
 
-      #contact {
-        text-align: center;
-        margin-top: 70px;
-        padding: 0 20px 70px;
+
+      .cta-card {
+        padding: 40px 25px;
       }
 
-      #contact h2 {
-        color: var(--purple);
-        font-weight: bold;
-        font-size: clamp(1.8rem, 5vw, 2.2rem);
-        margin-bottom: 20px;
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
       }
 
-      .email-link {
-        display: inline-block;
 
-        background: var(--pink);
-        box-shadow: 0 8px 20px rgba(255, 111, 174, 0.25);
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
 
-        color: var(--white);
-        padding: 14px 25px;
-        border-radius: 25px;
+        animation-iteration-count: 1 !important;
 
-        text-decoration: none;
-
-        transition: all 0.2s ease;
-
-        overflow-wrap: anywhere;
+        transition-duration: 0.01ms !important;
       }
 
-      .email-link:hover {
-        background: var(--pink-dark);
-        color: white;
-        transform: scale(1.03);
+    }
 
-        box-shadow: 0 10px 25px rgba(255, 111, 174, 0.35);
-      }
+  </style>
 
-      @media (hover: hover) {
-        .photo img:hover {
-          transform: translateY(-5px);
+</head>
 
-          box-shadow: 0 8px 15px rgba(255, 111, 174, 0.12),
-            0 20px 45px rgba(181, 108, 255, 0.2);
-        }
-      }
 
-      @media (max-width: 768px) {
-        .custom-navbar {
-          padding: 12px 0;
-        }
+<body>
 
-        .custom-navbar .nav-link {
-          margin-left: 0;
-          padding-top: 10px;
-          padding-bottom: 10px;
-        }
 
-        .about-intro {
-          padding-top: 35px;
-        }
 
-        .about-paragraphs {
-          margin: 40px 20px;
-        }
+  <nav
+    class="navbar navbar-expand-lg custom-navbar"
+    aria-label="Main navigation"
+  >
 
-        .about-paragraphs p {
-          padding: 25px;
-        }
+    <div class="container">
 
-        .photo-guide {
-          grid-template-columns: 1fr;
-          gap: 25px;
-        }
+      <a
+        class="navbar-brand"
+        href="index.html"
+      >
+        Shannen Nicholls
+      </a>
 
-        #contact {
-          margin-top: 50px;
-          padding-bottom: 50px;
-        }
-      }
-    </style>
-  </head>
 
-  <body>
-    <nav
-      class="navbar navbar-expand-lg custom-navbar"
-      aria-label="Main navigation"
-    >
-      <div class="container">
-       <a class="navbar-brand" href="index.html">
-  Shannen Nicholls
-</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">
-                Homepage
-              </a>
-            </li>
+      </button>
 
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">
-                About Me
-              </a>
-            </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
+      <div
+        class="collapse navbar-collapse"
+        id="navbarNav"
+      >
+
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link"
+              href="index.html"
+            >
+              Homepage
+            </a>
+
+          </li>
+
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link"
+              href="projects.html"
+            >
+              My Work
+            </a>
+
+          </li>
+
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link"
+              href="about.html"
+              aria-current="page"
+            >
+              About Me
+            </a>
+
+          </li>
+
+
+          <li class="nav-item">
+
+            <a
+              class="nav-link"
+              href="contact.html"
+            >
+              Contact
+            </a>
+
+          </li>
+
+        </ul>
+
       </div>
-    </nav>
 
-    <main>
-      <section class="about-intro">
-        <div class="container">
-          <h1>About me</h1>
+    </div>
 
-          <p class="subtitle">
-            Front-end developer from Bournemouth, UK
+  </nav>
+
+
+  <main>
+
+
+
+    <section class="about-hero">
+
+
+      <div class="floating-shape shape-one"></div>
+
+      <div class="floating-shape shape-two"></div>
+
+      <div class="floating-shape shape-three"></div>
+
+
+      <div class="about-hero-content">
+
+
+       
+        <div class="about-title-wrapper">
+
+          <span class="sparkle sparkle-one">
+            ✦
+          </span>
+
+
+          <h1 class="about-title">
+           About,<br>
+            <span>me 👩🏻‍🦰 </span>
+          </h1>
+
+
+          <span class="title-outline"></span>
+
+
+          <span class="sparkle sparkle-two">
+            ✦
+          </span>
+
+        </div>
+
+
+        <p class="about-tagline">
+          Creative thinking meets front-end development.
+        </p>
+
+
+        <p class="about-description">
+
+          I'm a UK-based aspiring front-end developer who loves turning
+          ideas into beautiful, thoughtful and user-friendly digital
+          experiences.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+  
+
+    <section class="about-intro-section">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          The person behind the code ✨
+        </h2>
+
+
+        <p class="section-subtitle">
+
+          A little about where I've come from, what I'm learning,
+          and why I love creating things for the web.
+
+        </p>
+
+
+        <div class="about-card">
+
+          <p>
+
+            Hi, I'm Shannen! I'm an aspiring
+            <span class="highlight">front-end developer</span>
+            with a background in operations, customer experience,
+            administration and creative problem-solving.
+
           </p>
-        </div>
-      </section>
 
-      <section class="about-content">
-        <div class="container">
-          <div class="about-paragraphs">
+
+          <p>
+
+            After spending years working in fast-paced environments,
+            managing teams, solving problems and keeping things running
+            behind the scenes, I discovered a new creative outlet through
+            coding.
+
+          </p>
+
+
+          <p>
+
+            What started with learning HTML and CSS quickly turned into
+            something I genuinely love. I'm fascinated by the way a few
+            lines of code can transform an idea into something interactive,
+            useful and completely unique.
+
+          </p>
+
+
+          <p>
+
+            I'm particularly drawn to the space where
+            <span class="highlight">design and technology meet</span>.
+            I love experimenting with layouts, colour, animation and
+            interactions while making sure the final experience remains
+            intuitive and accessible.
+
+          </p>
+
+
+          <p>
+
+            I'm currently developing my skills in HTML, CSS, JavaScript
+            and Bootstrap, while continuing to explore everything that
+            front-end development has to offer.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="journey-section">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          My journey so far
+        </h2>
+
+
+        <p class="section-subtitle">
+
+          A few things that have shaped the way I approach
+          creativity, technology and problem-solving.
+
+        </p>
+
+
+        <div class="journey-grid">
+
+
+          <article class="journey-card">
+
+            <div class="journey-icon">
+              💼
+            </div>
+
+            <h3>
+              Experience
+            </h3>
+
             <p>
-              Hi, I’m Shannen! I’m an aspiring web developer with a passion for
-              creating websites and learning new coding skills. Based in the UK with a background in operations, customer experience and creative problem-solving. I'm passionate about creating websites that aren't just functional, but thoughtful, intuitive and visually engaging.
+
+              Years of experience in operations, administration,
+              customer experience and managing fast-paced environments
+              taught me how to solve problems and pay attention to detail.
+
             </p>
-          </div>
+
+          </article>
 
 
-          <div class="photo-guide">
-            <figure class="photo">
-              <img
-                src="images/project1.png"
-                alt="Screenshot of Shannen Nicholls' Let's Manifest web application"
-              />
-            </figure>
+          <article class="journey-card">
 
-            <figure class="photo">
-              <img
-                src="images/project2.png"
-                alt="Screenshot of Shannen Nicholls' My Dopamine Hobby website"
-              />
-            </figure>
+            <div class="journey-icon">
+              💻
+            </div>
 
-            <figure class="photo">
-              <img
-                src="images/project3.png"
-                alt="Screenshot of Shannen Nicholls' weather application"
-              />
-            </figure>
-          </div>
+            <h3>
+              Learning to code
+            </h3>
+
+            <p>
+
+              I'm building my front-end development skills through
+              hands-on projects, experimenting with code and learning
+              how websites and applications work from the ground up.
+
+            </p>
+
+          </article>
+
+
+          <article class="journey-card">
+
+            <div class="journey-icon">
+              ✨
+            </div>
+
+            <h3>
+              Creativity
+            </h3>
+
+            <p>
+
+              From design and visual storytelling to exploring new
+              ideas, creativity is a huge part of how I approach
+              projects and solve problems.
+
+            </p>
+
+          </article>
+
+
         </div>
-      </section>
 
-      <section id="contact">
-        <h2>💌 Contact me</h2>
+      </div>
 
-        <p>I'd love to hear from you. You can contact me by email.</p>
+    </section>
 
-        <a href="mailto:shannen@email.com" class="email-link">
-          shannen@email.com
-        </a>
-      </section>
-    </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="script.js"></script>
-  </body>
+    <section class="skills-section">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          What I'm learning
+        </h2>
+
+
+        <p class="section-subtitle">
+
+          The tools and technologies I'm currently exploring
+          as I grow my development skills.
+
+        </p>
+
+
+        <div class="skills-container">
+
+          <span class="skill-pill">
+            HTML
+          </span>
+
+          <span class="skill-pill">
+            CSS
+          </span>
+
+          <span class="skill-pill">
+            JavaScript
+          </span>
+
+          <span class="skill-pill">
+            Bootstrap
+          </span>
+
+          <span class="skill-pill">
+            Responsive Design
+          </span>
+
+          <span class="skill-pill">
+            Web Accessibility
+          </span>
+
+          <span class="skill-pill">
+            SEO
+          </span>
+
+          <span class="skill-pill">
+            GitHub
+          </span>
+
+          <span class="skill-pill">
+            VS Code
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="projects-section">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          A glimpse at what I create 🌸
+        </h2>
+
+
+        <p class="section-subtitle">
+
+          A few of the projects I've created while learning
+          and experimenting with front-end development.
+
+        </p>
+
+
+        <div class="project-gallery">
+
+
+          <article class="project-card">
+
+            <img
+              src="images/project1.png"
+              alt="Screenshot of Shannen Nicholls' Let's Manifest web application"
+              loading="lazy"
+            />
+
+            <div class="project-card-content">
+
+              <h3>
+                Let's Manifest
+              </h3>
+
+              <p>
+                An interactive web application exploring manifestation,
+                reflection and positive thinking.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="project-card">
+
+            <img
+              src="images/project2.png"
+              alt="Screenshot of Shannen Nicholls' My Dopamine Hobby website"
+              loading="lazy"
+            />
+
+            <div class="project-card-content">
+
+              <h3>
+                My Dopamine Hobby
+              </h3>
+
+              <p>
+                A playful project exploring creativity, hobbies
+                and finding inspiration.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="project-card">
+
+            <img
+              src="images/project3.png"
+              alt="Screenshot of Shannen Nicholls' weather application"
+              loading="lazy"
+            />
+
+            <div class="project-card-content">
+
+              <h3>
+                Weather App
+              </h3>
+
+              <p>
+                A responsive weather application built while
+                learning JavaScript, APIs and dynamic content.
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="about-cta">
+
+      <div class="container">
+
+        <div class="cta-card">
+
+          <h2>
+            Let's create something ✨
+          </h2>
+
+
+          <p>
+
+            I'm always excited to learn, collaborate and work on
+            creative ideas. Have a project in mind or simply want
+            to say hello?
+
+          </p>
+
+
+          <a
+            href="contact.html"
+            class="cta-button"
+          >
+            Get in touch →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <footer>
+
+    <p>
+      © 2026
+      <strong>Shannen Nicholls</strong>
+      · Front-end Developer
+    </p>
+
+  </footer>
+
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+
+  <script src="script.js"></script>
+
+
+</body>
+
 </html>
-
